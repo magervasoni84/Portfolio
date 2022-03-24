@@ -1,0 +1,23 @@
+.social{
+    margin: 50px;
+}
+
+.social p{
+    text-align: center;
+    font-size: 10px;
+    margin-bottom: 20px;
+}
+
+.link{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link a{
+    margin:0 30px;
+}
+
+.link a i{
+    font-size: 3rem;
+}
