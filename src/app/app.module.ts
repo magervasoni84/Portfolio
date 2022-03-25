@@ -7,6 +7,9 @@ import { HeaderComponent } from './component/header/header.component';
 import { LogoAPComponent } from './component/logo-ap/logo-ap.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BodyComponent } from './component/body/body.component';
+import { ExpLabComponent } from './component/exp-lab/exp-lab.component';
+import { EstudiosComponent } from './component/estudios/estudios.component';
 
 
 @NgModule({
@@ -14,7 +17,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppComponent,
     HeaderComponent,
     LogoAPComponent,
-    FooterComponent
+    FooterComponent,
+    BodyComponent,
+    ExpLabComponent,
+    EstudiosComponent
   ],
   imports: [
     BrowserModule,

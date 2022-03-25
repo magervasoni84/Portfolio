@@ -1,11 +1,14 @@
 .social{
-    margin: 50px;
+    margin: 5px;
+    border: 1px solid #000000;
+    border-radius: 7px;
+    padding: 10px;
 }
 
 .social p{
     text-align: center;
-    font-size: 10px;
-    margin-bottom: 20px;
+    font-size: 15px;
+    margin-bottom:20px;
 }
 
 .link{
@@ -19,5 +22,5 @@
 }
 
 .link a i{
-    font-size: 3rem;
+    font-size: 2rem;
 }
