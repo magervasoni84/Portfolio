@@ -1,17 +1,61 @@
-<div class="container">
-  <div>
-    <app-logo-ap></app-logo-ap>
+<header id="inicio" class="container-fluid header">
+  
+  <!--En esta fila va la barra de navegación-->
+  <div class="row">
+    <div class="col header-nav">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="imagenes/fondo.jpg" alt="Argentina Programa"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-4">
+
+              <li class="nav-item">
+                <a class="nav-link" href="#sobre_mi">Sobre mí</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#habilidades">Habilidades</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#educacion">Educación</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#proyectos">Proyectos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contacto">Contacto</a>
+              </li>
+            </ul>
+            <span class="navbar-text">
+              <a class="nav-link fs-4" href="#"><i class="fa-solid fa-user-lock"></i></a>  <!-- ¡¡¡Login!!! -->
+            </span>
+          </div>
+        </div>
+
+      </nav>
+    </div>
   </div>
-    <nav class="nav-main">
-      aca va a ir la navegacion
-      <ul>
-        <li><a href="#" class="Mis datos">Mis datos</a></li>
-        <li><a href="#" class="Mis proyectos">Mis proyectos</a></li>
-        <li><a href="#" class="Contactos">Contactos</a></li>
-        <li><a href="#" class="etc">etc</a></li>
-      </ul>
-    </nav>
 
+  <!--En este contenedor va el texto del header-->
+  <div class="container-lg contenedor">
+    <div class="row justify-content-start">
+      <div class="col-6">
+        <h1 class="display-1">Gervasoni Mariano</h1>
+      </div>
+      <div class="display-6 icon-lines "><i class="fa-solid fa-code"></i></div>  <!-- ¡¡¡ Centrar logo !!! -->
+      <div class="row C">
+        <div class="col-4">
+          <h3 class="display-5">FullStack Developer Jr</h3>
+        </div>
+      </div>
+    </div>
 
+    <div class="justify-end-to-center">
+      <a class="btn btn-lg" href="#contacto">Contacto</a> 
+    </div>
 
   </div>
+</header>

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 // Bootstrap
-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -10,16 +9,19 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './component/header/header.component';
-import { LogoAPComponent } from './component/logo-ap/logo-ap.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { BodyComponent } from './component/body/body.component';
-import { ExpLabComponent } from './component/exp-lab/exp-lab.component';
 import { EstudiosComponent } from './component/estudios/estudios.component';
 import { ProyectosComponent } from './component/proyectos/proyectos.component';
 import { IniciarSessionComponent } from './component/iniciar-session/iniciar-session.component';
 import { PortfolioComponent } from './component/portfolio/portfolio.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InterceptorService } from './servicios/interceptor.service';
+import { ContactoComponent } from './component/contacto/contacto.component';
+import { SkillComponent } from './component/skill/skill.component';
+import { AboutComponent } from './component/about/about.component';
+
 
 
 
@@ -27,14 +29,14 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     HeaderComponent,
-    LogoAPComponent,
     FooterComponent,
-    BodyComponent,
-    ExpLabComponent,
     EstudiosComponent,
     ProyectosComponent,
     IniciarSessionComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    ContactoComponent,
+    SkillComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     NgbModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS, useClass:InterceptorService,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

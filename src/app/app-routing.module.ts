@@ -4,9 +4,9 @@ import { IniciarSessionComponent } from './component/iniciar-session/iniciar-ses
 import { PortfolioComponent } from './component/portfolio/portfolio.component';
 
 const routes: Routes = [
-  {path:'portfolio',component:PortfolioComponent},
+  {path:'Portfolio',component:PortfolioComponent},
   {path:'iniciar-sesion',component:IniciarSessionComponent},
-  {path:'',redirectTo:'iniciar-sesion',pathMatch:'full'}
+  {path:'',redirectTo:'Portfolio',pathMatch:'full'}
 ];
 
 @NgModule({
