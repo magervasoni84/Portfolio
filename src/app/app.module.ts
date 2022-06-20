@@ -17,10 +17,12 @@ import { IniciarSessionComponent } from './component/iniciar-session/iniciar-ses
 import { PortfolioComponent } from './component/portfolio/portfolio.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { InterceptorService } from './servicios/interceptor.service';
 import { ContactoComponent } from './component/contacto/contacto.component';
 import { SkillComponent } from './component/skill/skill.component';
 import { AboutComponent } from './component/about/about.component';
+import { VercontactosComponent } from './component/vercontactos/vercontactos.component';
 
 
 
@@ -36,14 +38,16 @@ import { AboutComponent } from './component/about/about.component';
     PortfolioComponent,
     ContactoComponent,
     SkillComponent,
-    AboutComponent
+    AboutComponent,
+    VercontactosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [{provide:HTTP_INTERCEPTORS, useClass:InterceptorService,multi:true}],
   bootstrap: [AppComponent]
