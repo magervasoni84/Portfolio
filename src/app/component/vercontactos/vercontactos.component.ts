@@ -3,16 +3,17 @@ import { contacto } from 'src/app/model/contacto.model';
 import { ContactoService } from 'src/app/servicios/contacto.service';
 
 @Component({
-  selector: 'app-contacto',
-  templateUrl: './contacto.component.html',
-  styleUrls: ['./contacto.component.css']
+  selector: 'app-vercontactos',
+  templateUrl: './vercontactos.component.html',
+  styleUrls: ['./vercontactos.component.css']
 })
-export class ContactoComponent implements OnInit {
+export class VercontactosComponent implements OnInit {
   contacto: contacto =new contacto("","","");
 
   constructor(public contactoService: ContactoService) { }
 
   ngOnInit(): void {
+    this.contactoService.getContacto().subscribe(data => {this.contacto = data})
   }
 
 }
