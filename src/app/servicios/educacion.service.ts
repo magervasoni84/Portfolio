@@ -15,7 +15,7 @@ export class EducacionService {
     constructor(private http: HttpClient) { }
 
     public getEduc():Observable<Educacion[]>{
-    return this.http.get<Educacion[]>(`${this.apiServerUrl}/educacion/all`); 
+    return this.http.get<Educacion[]>(`${this.apiServerUrl}/educacion/all`); //[] por que es un array, en header no lo usabamos por que traigo uno solo
     }
 
     public addEduc(educacion: Educacion):Observable<Educacion>{

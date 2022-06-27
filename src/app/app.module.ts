@@ -40,6 +40,7 @@ import { VercontactosComponent } from './component/vercontactos/vercontactos.com
     SkillComponent,
     AboutComponent,
     VercontactosComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -47,7 +48,8 @@ import { VercontactosComponent } from './component/vercontactos/vercontactos.com
     FontAwesomeModule,
     NgbModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [{provide:HTTP_INTERCEPTORS, useClass:InterceptorService,multi:true}],
   bootstrap: [AppComponent]
