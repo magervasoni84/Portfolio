@@ -9,7 +9,7 @@ import { contacto } from '../model/contacto.model';
 })
 
 export class ContactoService {
-  URL = 'http://localhost:8080/contacto';
+  URL = 'http://localhost:8080/api/contacto';
 
   constructor(private http: HttpClient) { }
 

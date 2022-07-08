@@ -1,5 +1,5 @@
 export class contacto{
-    id?: number;    //El ? para que?
+    id?: number;    
     nombre: String;
     email: String;
     texto: String;

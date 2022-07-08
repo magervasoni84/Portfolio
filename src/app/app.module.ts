@@ -13,16 +13,17 @@ import { FooterComponent } from './component/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EstudiosComponent } from './component/estudios/estudios.component';
 import { ProyectosComponent } from './component/proyectos/proyectos.component';
-import { IniciarSessionComponent } from './component/iniciar-session/iniciar-session.component';
 import { PortfolioComponent } from './component/portfolio/portfolio.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
-import { InterceptorService } from './servicios/interceptor.service';
 import { ContactoComponent } from './component/contacto/contacto.component';
 import { SkillComponent } from './component/skill/skill.component';
 import { AboutComponent } from './component/about/about.component';
 import { VercontactosComponent } from './component/vercontactos/vercontactos.component';
+import { RouterModule } from '@angular/router';
+import { LoginComponent } from './component/login/login.component';
+import { InterceptorService } from './servicios/interceptor.service';
 
 
 
@@ -34,12 +35,12 @@ import { VercontactosComponent } from './component/vercontactos/vercontactos.com
     FooterComponent,
     EstudiosComponent,
     ProyectosComponent,
-    IniciarSessionComponent,
     PortfolioComponent,
     ContactoComponent,
     SkillComponent,
     AboutComponent,
-    VercontactosComponent
+    VercontactosComponent,
+    LoginComponent
     
   ],
   imports: [
@@ -49,9 +50,10 @@ import { VercontactosComponent } from './component/vercontactos/vercontactos.com
     NgbModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
-  providers: [{provide:HTTP_INTERCEPTORS, useClass:InterceptorService,multi:true}],
+  providers: [{provide:HTTP_INTERCEPTORS, useClass:InterceptorService, multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
