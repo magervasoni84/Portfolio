@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { contacto } from '../model/contacto.model';
+import { environment } from 'src/environments/environment';
+import { Contacto } from '../model/contacto.model';
 
 
 @Injectable({
@@ -9,15 +10,24 @@ import { contacto } from '../model/contacto.model';
 })
 
 export class ContactoService {
-  URL = 'http://localhost:8080/api/contacto';
 
   constructor(private http: HttpClient) { }
 
-  public getContacto(): Observable<contacto>{
-    return this.http.get<contacto>(this.URL+'/ver');
-  }
-  
-  /* public crearContacto(): Observable<contacto>{
-    return this.http.post<contacto>(this.URL+'/new', 'nombre', 'email', 'texto');
-  } */
+  private  apiServerUrl=environment.apiBaseUrl;
+
+    public getContacto():Observable<Contacto[]>{
+    return this.http.get<Contacto[]>(`${this.apiServerUrl}/api/contacto/all`); 
+    }
+
+    public addContacto(contacto: Contacto):Observable<Contacto>{
+      return this.http.post<Contacto>(`${this.apiServerUrl}/api/contacto/add`, contacto); 
+    }
+
+    public updateContacto(contacto: Contacto):Observable<Contacto>{
+    return this.http.put<Contacto>(`${this.apiServerUrl}/api/contacto/update`, contacto);
+    }
+
+    public deleteContacto(contactoId: number):Observable<void>{
+      return this.http.delete<void>(`${this.apiServerUrl}/api/contacto/delete/${contactoId}`); 
+    }
 }

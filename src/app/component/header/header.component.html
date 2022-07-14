@@ -30,9 +30,19 @@
               </li>
             </ul>
             <span class="navbar-text">
+              
               <!-- Boton Login Modal -->
               <button type="button" class="btn btn-lg" data-bs-toggle="modal" data-bs-target="#LoginForm">
                 <i class="fa fa-user-lock"></i>
+              </button>
+              
+              <button *ngIf=botl type="text" class="btn-success"> Logueado
+                <i class="fa fa-user"></i>
+              </button>
+                
+              <!-- Boton LogOut -->
+              <button type="button" class="btn btn-lg" (click)="logOut()" >
+                <i class="fa fa-user-slash"></i>
               </button>
             </span>
           </div>

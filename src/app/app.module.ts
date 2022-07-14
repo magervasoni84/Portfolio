@@ -20,9 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ContactoComponent } from './component/contacto/contacto.component';
 import { SkillComponent } from './component/skill/skill.component';
 import { AboutComponent } from './component/about/about.component';
-import { VercontactosComponent } from './component/vercontactos/vercontactos.component';
 import { RouterModule } from '@angular/router';
-import { LoginComponent } from './component/login/login.component';
 import { InterceptorService } from './servicios/interceptor.service';
 
 
@@ -38,10 +36,7 @@ import { InterceptorService } from './servicios/interceptor.service';
     PortfolioComponent,
     ContactoComponent,
     SkillComponent,
-    AboutComponent,
-    VercontactosComponent,
-    LoginComponent
-    
+    AboutComponent   
   ],
   imports: [
     BrowserModule,

@@ -2,9 +2,8 @@
   <div class="container py-4 contenedor">
 
     <h2 class="display-6 mb-3 h2-lines">Educación</h2>
-    <div class="col-md text-center">
-
-      <!--Modal Boton Agregar Educacion-->
+    <!--Modal Boton Agregar Educacion-->
+    <div *ngIf="botl == true" class="col-md text-center">
       <button type="button" class="btn btn-lg" (click)="onOpenModal('add')" data-bs-toggle="modal"
         data-bs-target="#addEducacionModal">
         Añadir Educacion <span class="sr-only"> (current) </span>
@@ -12,7 +11,9 @@
       </button>
     </div>
 
+    
 
+    
     <ul class="row justify-content-center list-unstyled mt-3">
       <li class="col-12 card mb-3">
         <div class="row g-0">
@@ -26,30 +27,32 @@
                 <div class="col-md">
                   <p class="fs-4"><span class="fw-bolder">Año:</span> {{educaciones.fechaEdu}} </p>
                 </div>
-                <div class="row text-center">
+                <!--*ngIf para ocultar botones editar y borrar-->
                   <!--Boton Borrar Educacion-->
-                  <div class="col-md text-center">
+                <div *ngIf="botl == true"  class="row text-center"> <!--Se oculta al no estar logueado--> 
+                  <div  class="col-md text-center">
                     <button type="button" class="btn btn-lg tooltips" 
                             (click)="onOpenModal('delete', educaciones)"  
                             data-bs-placement="top"
                             data-bs-toggle="modal" 
                             data-bs-target="#deleteEducacionModal" 
-                            data-bs-original-title="delete">
+                            data-bs-original-title="delete"
+                            >
                       <i class="fa fa-times"></i>
                     </button>
                   </div>
 
                     <!--Boton Editar Educacion-->
-                    <div class="col-md text-center">
-                      <button  class="btn btn-lg tooltips" 
-                              (click)="onOpenModal('edit', educaciones)"  
-                              data-bs-target="#editEducacionModal"
-                              data-bs-placement="top"
-                              data-bs-toggle="modal" 
-                              data-bs-original-title="edit">
+                  <div class="col-md text-center">
+                    <button  class="btn btn-lg tooltips" 
+                            (click)="onOpenModal('edit', educaciones)"  
+                            data-bs-target="#editEducacionModal"
+                            data-bs-placement="top"
+                            data-bs-toggle="modal" 
+                            data-bs-original-title="edit">
                         <i class="fa fa-pencil"></i>
                     </button>
-                    </div>
+                  </div>
                 </div>
                 <div class="col-md text-center"><a href="#" class="btn btn-lg">Más info</a>
                 </div>

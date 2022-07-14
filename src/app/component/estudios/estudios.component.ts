@@ -2,7 +2,9 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Educacion } from 'src/app/model/educacion.model';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { EducacionService } from 'src/app/servicios/educacion.service';
+
 
 @Component({
   selector: 'app-estudios',
@@ -15,11 +17,15 @@ export class EstudiosComponent implements OnInit {
   public educacion:Educacion[]=[];
   public editEducacion:Educacion | undefined;
   public deleteEducacion:Educacion | undefined;
+  public botl: boolean = false;
   
-  constructor(private educacionService:EducacionService) { }
+  
+  constructor(private educacionService:EducacionService,
+              private autenticacionService: AutenticacionService) { }
 
   ngOnInit(): void {
     this.getEducacion();
+    this.botLogueado();
   }
 
   public getEducacion():void{
@@ -92,5 +98,15 @@ export class EstudiosComponent implements OnInit {
         alert(error.message);
       }
     })
+  }
+
+
+  //Boton al Loguearse
+
+  private botLogueado():boolean {
+    if (this.autenticacionService.getToken() != null)
+      this.botl=true;
+      return this.botl;  //logueado
+
   }
 }

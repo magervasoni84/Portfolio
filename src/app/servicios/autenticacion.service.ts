@@ -25,12 +25,13 @@ export class AutenticacionService {
   public IniciarSesion(credenciales:any): Observable<any>{
     return this.http.post(this.url, credenciales).pipe(map(data => {
       console.log("Iniciar Session");
+      console.log('token' + JSON.parse(JSON.stringify(data)).token);
       sessionStorage.setItem('token', JSON.stringify(data));
-     /* this.tokenActual = JSON.parse(JSON.stringify(data)).token;
-       sessionStorage.setItem('currentUser', JSON.parse(JSON.stringify(data)).token);  
-      sessionStorage.setItem('token',       JSON.parse(JSON.stringify(data)).token);
+      this.tokenActual = JSON.parse(JSON.stringify(data)).token;
+      sessionStorage.setItem('currentUser', JSON.parse(JSON.stringify(data)).token);  
+/*    sessionStorage.setItem('token',       JSON.parse(JSON.stringify(data)).token);*/
       sessionStorage.setItem('username',    JSON.parse(JSON.stringify(data)).username);
-      this.currentUserSubject.next(data); */ 
+      this.currentUserSubject.next(data); 
       return data;
       }
     ))
