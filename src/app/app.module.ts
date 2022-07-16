@@ -23,9 +23,6 @@ import { AboutComponent } from './component/about/about.component';
 import { RouterModule } from '@angular/router';
 import { InterceptorService } from './servicios/interceptor.service';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Educacion } from '../model/educacion.model';
+import { urlBack } from './urlBack';
 
 
 @Injectable({
@@ -10,7 +11,9 @@ import { Educacion } from '../model/educacion.model';
 })
 
 export class EducacionService {
-    private  apiServerUrl=environment.apiBaseUrl;
+    /* private  apiServerUrl=environment.apiBaseUrl; */
+    private  apiServerUrl:string = `${urlBack}`;
+
 
     constructor(private http: HttpClient) { }
 

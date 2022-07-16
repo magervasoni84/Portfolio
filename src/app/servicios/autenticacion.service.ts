@@ -1,6 +1,13 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { urlBack } from './urlBack';
+const httpOptions = {
+  Headers: new HttpHeaders({
+    'Accept' : 'application/json',
+    'Content-Type' : 'application/json'
+  })
+}
 
 
 @Injectable({
@@ -8,8 +15,9 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class AutenticacionService {
-  url = "http://localhost:8080/api/login";  //En el Back AuthApi.java
-  //  url!:"http:// herokuapp";  //Para el deploy 
+
+  /* private  url=environment.apiBaseUrl; */
+  private  url:string = `${urlBack}/api/login`;
   currentUserSubject:BehaviorSubject<any>;
   
   public tokenActual!:String;
@@ -25,7 +33,7 @@ export class AutenticacionService {
   public IniciarSesion(credenciales:any): Observable<any>{
     return this.http.post(this.url, credenciales).pipe(map(data => {
       console.log("Iniciar Session");
-      console.log('token' + JSON.parse(JSON.stringify(data)).token);
+      console.log('token' + JSON.parse(JSON.stringify(data)).token); 
       sessionStorage.setItem('token', JSON.stringify(data));
       this.tokenActual = JSON.parse(JSON.stringify(data)).token;
       sessionStorage.setItem('currentUser', JSON.parse(JSON.stringify(data)).token);  

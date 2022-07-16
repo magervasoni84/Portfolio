@@ -1,4 +1,3 @@
-import { CurrencyPipe } from '@angular/common';
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -22,16 +21,6 @@ export class InterceptorService  implements HttpInterceptor{
     return next.handle(tokReq);
   }
   
-/*   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    var currentUser = this.autentService.UsuarioAutenticado;
-    if(currentUser && currentUser.accessToken){
-      req = req.clone({setHeaders:{
-      Authorization: 'Bearer $(currentUser.accessToken)'
-    }})
-  }
-  console.log("Interceptos esta corriendo" + JSON.stringify(currentUser));
-  return next.handle(req);}  */
-
 }
 
 

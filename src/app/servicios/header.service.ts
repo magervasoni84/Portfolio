@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Usuario } from '../model/usuario.model';
+import { urlBack } from './urlBack';
 
 
 @Injectable({
@@ -10,7 +11,9 @@ import { Usuario } from '../model/usuario.model';
 })
 
 export class HeaderService {
-    private  apiServerUrl=environment.apiBaseUrl;
+/*     private  apiServerUrl=environment.apiBaseUrl;
+ */    private  apiServerUrl:string = `${urlBack}`;
+
 
     constructor(private http: HttpClient) { }
 

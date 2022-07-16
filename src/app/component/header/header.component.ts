@@ -1,8 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Token } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { Usuario } from 'src/app/model/usuario.model';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { HeaderService } from 'src/app/servicios/header.service';

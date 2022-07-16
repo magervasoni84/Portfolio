@@ -45,9 +45,11 @@
           </div>
         </div>
       </div>
-
       <div class="row">
+
         <div class="col p-3 shadow mt-3">
+          <h3 class="display-6 mb-3 h3-lines">Si queres contactarme, deja un mensaje</h3>
+
           <form #FormContact="ngForm" (ngSubmit)="AddContacto(FormContact)">
             <div class="row g-3 py-3 form-group">
               <div class="col-md-6 ">
@@ -99,7 +101,7 @@
     </div>
 
 
-    <div *ngIf="Cboolen == false" class="container py-4 contenedor">
+    <div *ngIf="Cboolen == true" class="container py-4 contenedor">
       <h2 class="display-6 mb-3 h2-lines">Contactos</h2>
     
       <ul class="row justify-content-center list-unstyled mt-3">
