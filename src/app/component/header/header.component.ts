@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Usuario } from 'src/app/model/usuario.model';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { HeaderService } from 'src/app/servicios/header.service';
@@ -20,11 +21,13 @@ export class HeaderComponent implements OnInit {
   public botl: boolean = false;
   form: FormGroup;
   
+  
 
   constructor(private FormBuilder:FormBuilder,
               private headerService : HeaderService,
               private autenticacionService:AutenticacionService,
               private tokenService:TokenService,
+              private router:Router
               ){
      this.form = this.FormBuilder.group(
       {       
@@ -70,11 +73,11 @@ export class HeaderComponent implements OnInit {
     this.autenticacionService.IniciarSesion(this.form.value).subscribe(data=>{
       console.log("DATA:" + JSON.stringify(data));
       window.location.reload(); //Hacer un if para que no refresque y tire un erro de pass
+      /* this.router.navigate(['PortfolioComponent']); */
       })
     }
 
-  public logOut(){
-    
+  public logOut(){ 
     this.tokenService.logOut();
     window.location.reload()
     return null;

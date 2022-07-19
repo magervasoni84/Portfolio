@@ -1,6 +1,6 @@
 <!--Contact-->
 <section id="contacto" class="container-fluid">
-    <div class="container py-4 contenedor">
+    <div class="container py-4 contenedor" >
       <h2 class="display-6 mb-3 h2-lines">Contacto</h2>
 
       <div class="row">
@@ -9,9 +9,9 @@
             <div class="contact-img fs-3">
               <i class="fa-solid fa-house"></i>
             </div>
-            <div class="card-body mb-3">
+            <div class="card-body mb-3" *ngIf="usuario">
               <h5 class="card-title text-center fs-3">UBICACIÓN</h5>
-              <p class="card-text text-center fs-5">Castelar BuenosAires, Argentina</p>
+              <p class="card-text text-center fs-5">{{usuario.ubicacion}}</p>
             </div>
           </div>
         </div>
@@ -21,9 +21,9 @@
             <div class="contact-img fs-3">
               <i class="fa-solid fa-envelope"></i>
             </div>
-            <div class="card-body mb-3">
+            <div class="card-body mb-3" *ngIf="usuario">
               <h5 class="card-title text-center fs-3">EMAIL</h5>
-              <p class="card-text text-center fs-5">m.a.gervasoni84@gmail.com</p>
+              <p class="card-text text-center fs-5">{{usuario.email}}</p>
             </div>
           </div>
         </div>
@@ -38,8 +38,8 @@
               <p class="card-text text-center fs-4">
                 <a href="https://github.com/magervasoni84"><i class="fa-brands fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/mariano-gervasoni-b92318102/"><i class="fa-brands fa-linkedin"></i></a>
-<!--                 <a href=""><i class="fa-brands fa-instagram"></i></a> -->
-                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <!--<a href=""><i class="fa-brands fa-instagram"></i></a> -->
+                <!-- <a href=""><i class="fa-brands fa-facebook"></i></a> -->
               </p>
             </div>
           </div>
