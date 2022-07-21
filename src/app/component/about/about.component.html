@@ -1,5 +1,5 @@
 <section id="sobre_mi" class="container-fluid mt-3">
-    <div class="container py-4 contenedor">
+    <div class="container py-4 contenedor" *ngIf="usuario">
       <h2 class="display-6 mb-3 h2-lines">Sobre mí</h2>
 
       <div class="row align-items-center py-3">
@@ -7,9 +7,7 @@
           <img src="../../../assets/foto_frente.jpg" alt="Gervasoni Mariano" class="img-fluid">
         </div>
         <div class="col-sm-8 mt-3">
-          <p class="fs-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam officiis fugiat molestias,
-            aut voluptatum, eligendi inventore aspernatur voluptate et error quasi, voluptates explicabo mollitia earum
-            rerum qui. Eos, praesentium voluptas.</p>
+          <p class="fs-4" >{{usuario.descripcion}}</p>
         </div>
       </div>
 

@@ -4,4 +4,5 @@ export interface Educacion{
     fechaEdu : string;
     descEdu : string;
     imagenEdu : string;
+    masInfoEdu: string;
 }

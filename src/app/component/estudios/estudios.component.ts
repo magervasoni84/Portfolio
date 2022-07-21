@@ -18,6 +18,7 @@ export class EstudiosComponent implements OnInit {
   public editEducacion:Educacion | undefined;
   public deleteEducacion:Educacion | undefined;
   public botl: boolean = false;
+  public bolMasInfo: boolean = false;
   
   
   constructor(private educacionService:EducacionService,
@@ -26,7 +27,8 @@ export class EstudiosComponent implements OnInit {
   ngOnInit(): void {
     this.getEducacion();
     this.botLogueado();
-  }
+/*     this.BolMasInfo(); 
+ */  }
 
   public getEducacion():void{
     this.educacionService.getEduc().subscribe({
@@ -109,4 +111,5 @@ export class EstudiosComponent implements OnInit {
       return this.botl;  //logueado
 
   }
+
 }
