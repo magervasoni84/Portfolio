@@ -27,8 +27,7 @@ export class EstudiosComponent implements OnInit {
   ngOnInit(): void {
     this.getEducacion();
     this.botLogueado();
-/*     this.BolMasInfo(); 
- */  }
+  }
 
   public getEducacion():void{
     this.educacionService.getEduc().subscribe({
