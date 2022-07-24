@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 // Bootstrap
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-
-// Component
+// Componentes
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './component/header/header.component';
@@ -46,4 +43,6 @@ import { PortfolioComponent } from './component/portfolio/portfolio.component';
   providers: [{provide:HTTP_INTERCEPTORS, useClass:InterceptorService, multi:true}],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}

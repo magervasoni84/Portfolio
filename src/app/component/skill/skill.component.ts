@@ -8,11 +8,13 @@ import { SkillService } from 'src/app/servicios/skill.service';
   templateUrl: './skill.component.html',
   styleUrls: ['./skill.component.css']
 })
-export class SkillComponent implements OnInit {
-    public skill: Skill[] = [];
+
+export  class SkillComponent implements OnInit {
+        public skill: Skill[] = [];
   
 
-  constructor(private skillService: SkillService) { }
+  constructor(private skillService: SkillService
+              ) { }
 
   ngOnInit(): void {
     this.getSk();
@@ -29,4 +31,5 @@ export class SkillComponent implements OnInit {
     })
   }
 
+  
 }

@@ -1,19 +1,105 @@
 <section id="skill" class="container-fluid background-grey">
-  
-    <h2 class="display-6 mb-3 h2-lines">Habilidades (Aca van Skill mostrados en circulos)</h2>
+
+    <h2 class="display-1 mb-3 h2-lines">Habilidades</h2>
+
+    <div class="row">
+        <div class=" card-height mb-3"></div>
+        <div class="shadow col-sm-6 col-md-4 col-lg-4" *ngFor="let sk of skill">
+            <div class="col" *ngIf="(sk.porcentSk > 0) && (sk.porcentSk <= 20) else opcion1">
+                <div class="progress opcion0">
+                    <span class="progress-left">
+                        <span class="progress-bar"></span>
+                    </span>
+                    <span class="progress-right">
+                        <span class="progress-bar"></span>
+                    </span>
+                    <div class="progress-value">{{sk.porcentSk}}%</div>
+                </div>
+                <div class="col">
+
+                    <div class="text"> {{sk.nombreSk}}</div>
+                </div>
+            </div>
+
+            <ng-template #opcion1>
+                <div class="col" *ngIf="(sk.porcentSk > 20) && (sk.porcentSk <= 40) else opcion2">
+                    <div class="progress opcion1">
+                        <span class="progress-left">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">{{sk.porcentSk}}%</div>
+                    </div>
+                    <div class="col">
     
-    <div class="dashboard" *ngFor="let sk of skill">
-      <svg>
-        <circle class="bg" cx="57" cy="57" r="52" />
-        <text x="40" y="60">{{sk.nombreSk}}</text>
-        <circle class="meter-1" cx="57" cy="57" r="52" />
-      </svg>
+                        <div class="text"> {{sk.nombreSk}}</div>
+                    </div>
+                </div>
+            </ng-template>
+
+
+            <ng-template #opcion2>
+                <div class="col" *ngIf="(sk.porcentSk > 40) && (sk.porcentSk <= 60) else opcion3">
+                    <div class="progress opcion2">
+                        <span class="progress-left">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">{{sk.porcentSk}}%</div>
+                    </div>
+                    <div class="col">
     
-      <!-- <img class="card-img-top" src="{{sk.fotoSk}}" alt="Imagen representativa Skill" >
-      <div class="card-body">
-        
-        <p>{{sk.porcentSk}}</p>
-      </div> -->
+                        <div class="text"> {{sk.nombreSk}}</div>
+                    </div>
+                </div>
+            </ng-template>
+
+            <ng-template #opcion3>
+                <div class="col" *ngIf="(sk.porcentSk > 60) && (sk.porcentSk <= 80) else opcion4">
+                    <div class="progress opcion3">
+                        <span class="progress-left">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">{{sk.porcentSk}}%</div>
+                    </div>
+                    <div class="col">
+    
+                        <div class="text"> {{sk.nombreSk}}</div>
+                    </div>
+                </div>
+            </ng-template>
+
+
+            <ng-template #opcion4>
+                <div class="col" *ngIf="(sk.porcentSk > 80) && (sk.porcentSk <= 100)">
+                    <div class="progress opcion4">
+                        <span class="progress-left">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">{{sk.porcentSk}}%</div>
+                    </div>
+                    <div class="col">
+    
+                        <div class="text"> {{sk.nombreSk}}</div>
+                    </div>
+                </div>
+            </ng-template>
+
+
+
+
+        </div>
+
     </div>
-  
+
 </section>
